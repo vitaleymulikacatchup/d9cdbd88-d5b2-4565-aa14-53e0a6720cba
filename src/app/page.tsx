@@ -1,5 +1,5 @@
 "use client";
-import { ThemeProvider } from "@/providers/ThemeProvider";
+import { ThemeProvider } from '@/providers/ThemeProvider';
 import NavbarLayoutFloatingOverlay from '@/components/navbar/NavbarLayoutFloatingOverlay/NavbarLayoutFloatingOverlay';
 import HeroSplit from '@/components/sections/hero/HeroSplit';
 import SplitAbout from '@/components/sections/about/SplitAbout';
@@ -10,7 +10,7 @@ import TestimonialCardThree from '@/components/sections/testimonial/TestimonialC
 import ContactSplit from '@/components/sections/contact/ContactSplit';
 import FooterBaseReveal from '@/components/sections/footer/FooterBaseReveal';
 
-const assetMap: { id: string; url: string; alt?: string }[] = [
+const assetMap = [
   { id: "hero-image", url: "https://images.pexels.com/photos/34301930/pexels-photo-34301930.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", alt: "High-End Gaming PC Interior with Colorful RGB Lights" },
   { id: "team-image", url: "https://images.pexels.com/photos/34234336/pexels-photo-34234336.png?auto=compress&cs=tinysrgb&h=650&w=940", alt: "Business team having a casual meeting on a rooftop terrace with a cityscape view." },
 ];
@@ -39,10 +39,10 @@ export default function Home() {
             title="Unlock Your Tech Potential"
             description="Empowering Developers with Cutting-edge Tools"
             imagePosition="left"
-            imageSrc="https://images.pexels.com/photos/34301930/pexels-photo-34301930.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+            imageSrc={assetMap.find(a => a.id === "hero-image")?.url}
             buttons={[
               { text: "Learn More", href: "features" },
-              { text: "Get Started", href: "pricing" },
+              { text: "Get Started", href: "pricing" }
             ]}
           />
         </div>
@@ -54,7 +54,7 @@ export default function Home() {
               { title: "Innovation", description: "We push boundaries", icon: "Lightbulb" },
               { title: "Quality", description: "Excellence in every detail", icon: "CheckCircle" },
             ]}
-            imageSrc="https://images.pexels.com/photos/34234336/pexels-photo-34234336.png?auto=compress&cs=tinysrgb&h=650&w=940"
+            imageSrc={assetMap.find(a => a.id === "team-image")?.url}
           />
         </div>
       </div>
@@ -73,7 +73,7 @@ export default function Home() {
           <PricingCardTwo
             plans={[
               { id: "basic", price: "$29/mo", subtitle: "Perfect for individuals", features: ["5 Projects", "Community Support"], badge: "Starter" },
-              { id: "premium", badge: "Popular", price: "$59/mo", subtitle: "Ideal for growing teams", features: ["Unlimited Projects", "Priority Support"] },
+              { id: "premium", price: "$59/mo", subtitle: "Ideal for growing teams", features: ["Unlimited Projects", "Priority Support"], badge: "Popular" },
             ]}
           />
         </div>
@@ -82,8 +82,8 @@ export default function Home() {
         <div className="mx-auto px-4 md:px-6">
           <TeamCardThree
             members={[
-              { id: "1", name: "Alex Johnson", role: "CEO", imageSrc: "https://images.pexels.com/photos/34234336/pexels-photo-34234336.png?auto=compress&cs=tinysrgb&h=650&w=940" },
-              { id: "2", name: "Chris Lee", role: "CTO", imageSrc: "https://images.pexels.com/photos/34234336/pexels-photo-34234336.png?auto=compress&cs=tinysrgb&h=650&w=940" },
+              { id: "1", name: "Alex Johnson", role: "CEO", imageSrc: assetMap.find(a => a.id === "team-image")?.url },
+              { id: "2", name: "Chris Lee", role: "CTO", imageSrc: assetMap.find(a => a.id === "team-image")?.url },
             ]}
           />
         </div>
@@ -104,7 +104,7 @@ export default function Home() {
             tag="Get In Touch"
             title="Contact Us Today"
             description="Reach out and let us help you achieve your tech goals."
-            imageSrc="https://images.pexels.com/photos/34234336/pexels-photo-34234336.png?auto=compress&cs=tinysrgb&h=650&w=940"
+            imageSrc={assetMap.find(a => a.id === "team-image")?.url}
             mediaPosition="right"
           />
         </div>

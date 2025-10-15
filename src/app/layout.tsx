@@ -77,12 +77,19 @@ export const metadata: Metadata = {
   title: "Realdevs - Empowering Developers",
   description: "Transform your workflow with Realdevs. Our advanced tools and features are designed for developers looking to innovate.",
   keywords: "Realdevs, SaaS, Developer Tools",
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: "Realdevs - Empowering Developers",
     description: "Transform your workflow with Realdevs. Our advanced tools and features are designed for developers looking to innovate.",
-    images: [{ url: "https://images.pexels.com/photos/34301930/pexels-photo-34301930.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" }],
-    type: "website",
+    url: "https://www.realdevs.com",
     siteName: "Realdevs",
+    images: [{
+      url: "https://images.pexels.com/photos/34301930/pexels-photo-34301930.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+    }],
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
@@ -90,19 +97,14 @@ export const metadata: Metadata = {
     description: "Transform your workflow with Realdevs. Our advanced tools and features are designed for developers looking to innovate.",
     images: ["https://images.pexels.com/photos/34301930/pexels-photo-34301930.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"],
   },
-  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html lang="en">
-      <body
-        className={`${interTight.variable} ${playfairDisplay.variable} ${roboto.variable} ${openSans.variable} ${lato.variable} ${montserrat.variable} ${poppins.variable} ${raleway.variable} ${ubuntu.variable} ${nunito.variable} antialiased`}
-      >
+      <body className={`${interTight.variable} ${playfairDisplay.variable} ${roboto.variable} ${openSans.variable} ${lato.variable} ${montserrat.variable} ${poppins.variable} ${raleway.variable} ${ubuntu.variable} ${nunito.variable} antialiased`}> 
         {children}
       
         <script
