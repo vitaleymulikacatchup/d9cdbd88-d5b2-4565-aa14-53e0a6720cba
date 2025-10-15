@@ -9,6 +9,7 @@ import TeamCardThree from '@/components/sections/team/TeamCardThree';
 import TestimonialCardThree from '@/components/sections/testimonial/TestimonialCardThree';
 import ContactSplit from '@/components/sections/contact/ContactSplit';
 import FooterBaseReveal from '@/components/sections/footer/FooterBaseReveal';
+import { Lightbulb, CheckCircle, TrendingUp, Zap } from 'lucide-react';
 
 const assetMap = [
   { id: "hero-image", url: "https://images.pexels.com/photos/34301930/pexels-photo-34301930.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", alt: "High-End Gaming PC Interior with Colorful RGB Lights" },
@@ -51,8 +52,8 @@ export default function Home() {
         <div className="mx-auto px-4 md:px-6">
           <SplitAbout
             bulletPoints={[
-              { title: "Innovation", description: "We push boundaries", icon: "Lightbulb" },
-              { title: "Quality", description: "Excellence in every detail", icon: "CheckCircle" },
+              { title: "Innovation", description: "We push boundaries", icon: Lightbulb },
+              { title: "Quality", description: "Excellence in every detail", icon: CheckCircle },
             ]}
             imageSrc={assetMap.find(a => a.id === "team-image")?.url}
           />
@@ -62,8 +63,8 @@ export default function Home() {
         <div className="mx-auto px-4 md:px-6">
           <FeatureCardTwo
             features={[
-              { title: "Advanced Analytics", description: "Get detailed insights into your business performance", icon: "TrendingUp" },
-              { title: "Seamless Integration", description: "Connect effortlessly with countless applications", icon: "Zap" },
+              { title: "Advanced Analytics", description: "Get detailed insights into your business performance", icon: TrendingUp },
+              { title: "Seamless Integration", description: "Connect effortlessly with countless applications", icon: Zap },
             ]}
           />
         </div>
@@ -73,7 +74,7 @@ export default function Home() {
           <PricingCardTwo
             plans={[
               { id: "basic", price: "$29/mo", subtitle: "Perfect for individuals", features: ["5 Projects", "Community Support"], badge: "Starter" },
-              { id: "premium", price: "$59/mo", subtitle: "Ideal for growing teams", features: ["Unlimited Projects", "Priority Support"], badge: "Popular" },
+              { id: "premium", badge: "Popular", price: "$59/mo", subtitle: "Ideal for growing teams", features: ["Unlimited Projects", "Priority Support"] },
             ]}
           />
         </div>
